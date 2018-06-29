@@ -1,0 +1,41 @@
+<idea-plugin>
+  <id>com.jetbrains.hackathon2015.S</id>
+  <name>Snake</name>
+  <version>1.0.2</version>
+  <vendor email="andrey.vlasovskikh@jetbrains.com" url="https://github.com/vlasovskikh/intellij-snake">JetBrains</vendor>
+
+  <description><![CDATA[
+   <p>A snake game inside your code structure in IntelliJ.</p>
+   <p>Make your code more Python-like by helping the snake eat all the curly braces and semicolons!</p>
+   <p>To start the game type 'snake' in the editor or use "Tools | Run Snake" action.</p>
+   ]]></description>
+
+  <change-notes><![CDATA[
+  <p>1.0.2</p>
+  <ul>
+    <li>Updated Snake for IntelliJ 2018.1</li>
+  </ul>
+  <p>1.0.1</p>
+  <ul>
+    <li>Renamed the plug-in to Snake</li>
+  </ul>
+  <p>1.0:</p>
+  <ul>
+    <li>Initial release</li>
+  </ul>
+  ]]></change-notes>
+
+  <idea-version since-build="181.0"/>
+
+  <depends>com.intellij.modules.lang</depends>
+
+  <actions>
+    <action id="com.jetbrains.hackathon2015.s.RunSnakeAction" class="com.jetbrains.hackathon2015.s.RunSnakeAction" text="Run Snake">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+    </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <postStartupActivity implementation="com.jetbrains.hackathon2015.s.RegisterOnTypeLauncher"/>
+  </extensions>
+</idea-plugin>

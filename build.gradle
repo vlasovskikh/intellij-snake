@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+plugins {
+    id 'org.jetbrains.intellij' version '0.3.4'
+}
+
+apply plugin: 'kotlin'
+
+intellij {
+    version ideaVersion
+    pluginName 'intellij-snake'
+    downloadSources Boolean.valueOf(downloadIdeaSources)
+    updateSinceUntilBuild false
+    publishPlugin {
+        username publishUsername
+        password publishPassword
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+}
