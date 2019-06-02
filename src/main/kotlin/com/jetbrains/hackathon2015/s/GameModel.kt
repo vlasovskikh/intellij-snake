@@ -115,7 +115,7 @@ class GameModel(private val editor: Editor) {
       CellType.WALL -> return false
       CellType.SNAKE -> return false
       CellType.FOOD -> eatenCells.add(newHead)
-      GameModel.CellType.EMPTY -> {}
+      CellType.EMPTY -> {}
     }
     snakeCells.addFirst(newHead)
     return true
