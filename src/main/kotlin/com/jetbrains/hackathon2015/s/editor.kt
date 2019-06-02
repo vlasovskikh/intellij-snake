@@ -2,9 +2,7 @@ package com.jetbrains.hackathon2015.s
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.VisualPosition
-import com.intellij.openapi.editor.colors.EditorFontType
 import com.intellij.openapi.editor.impl.EditorImpl
-import sun.swing.SwingUtilities2
 import java.awt.Dimension
 import java.awt.Font
 import java.awt.FontMetrics
@@ -42,8 +40,7 @@ internal val Editor.columnWidth: Int
 
 val Editor.fontMetrics: FontMetrics
   get() =
-    (this as? EditorImpl)?.getFontMetrics(Font.PLAIN) ?:
-    SwingUtilities2.getFontMetrics(component, colorsScheme.getFont(EditorFontType.PLAIN))
+    (this as EditorImpl).getFontMetrics(Font.PLAIN)
 
 internal val Editor.visibleColumns: Int
   get() = xyToVisualPosition(Point(scrollingModel.visibleArea.width, 0)).column
