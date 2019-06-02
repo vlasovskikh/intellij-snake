@@ -8,7 +8,7 @@ import java.awt.Font
 import java.awt.FontMetrics
 import java.awt.Point
 
-val Editor.screenSize: Pair<Int, Int>
+internal val Editor.screenSize: Pair<Int, Int>
   get() = Pair(visibleLines, visibleColumns)
 
 internal fun Editor.visualPositionToOffset(position: VisualPosition): Int =
@@ -38,7 +38,7 @@ internal val Editor.leftVisualColumn: Int
 internal val Editor.columnWidth: Int
   get() = fontMetrics.charWidth('A')
 
-val Editor.fontMetrics: FontMetrics
+internal val Editor.fontMetrics: FontMetrics
   get() =
     (this as EditorImpl).getFontMetrics(Font.PLAIN)
 
@@ -57,7 +57,7 @@ internal fun Editor.activateSnake() {
   GameController(this).activate()
 }
 
-operator fun Dimension.component1(): Int = width
-operator fun Dimension.component2(): Int = height
-operator fun VisualPosition.component1(): Int = line
-operator fun VisualPosition.component2(): Int = column
+internal operator fun Dimension.component1(): Int = width
+internal operator fun Dimension.component2(): Int = height
+internal operator fun VisualPosition.component1(): Int = line
+internal operator fun VisualPosition.component2(): Int = column
