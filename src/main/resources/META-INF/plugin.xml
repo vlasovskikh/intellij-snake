@@ -1,7 +1,6 @@
 <idea-plugin>
   <id>com.jetbrains.hackathon2015.S</id>
   <name>Snake</name>
-  <version>1.0.2</version>
   <vendor email="andrey.vlasovskikh@jetbrains.com" url="https://github.com/vlasovskikh/intellij-snake">JetBrains</vendor>
 
   <description><![CDATA[
@@ -34,8 +33,4 @@
       <add-to-group group-id="ToolsMenu" anchor="last"/>
     </action>
   </actions>
-
-  <extensions defaultExtensionNs="com.intellij">
-    <postStartupActivity implementation="com.jetbrains.hackathon2015.s.RegisterOnTypeLauncher"/>
-  </extensions>
 </idea-plugin>
